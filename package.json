@@ -1,0 +1,16 @@
+{
+	"name" : "dotpng",
+	"description" : "PNG file generation for the browser",
+	"keywords" : ["PNG", "image", "generation"],
+	"version" : "0.0.1",
+	"author" : "Richard Assar <richardassar@googlemail.com>",
+	"main" : "./src/dotpng.js",
+	"test" : "make test",
+	"repository" : {
+		"type" : "git",
+		"url" : "https://github.com/richardassar/dotpng"
+	},
+	"dependencies" : {
+		"bitster" : "https://github.com/richardassar/bitster/tarball/master"
+	}
+}
