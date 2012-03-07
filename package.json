@@ -1,6 +1,6 @@
 {
 	"name" : "dotpng",
-	"description" : "PNG file generation for the browser",
+	"description" : "PNG in the browser made easy",
 	"keywords" : ["PNG", "image", "generation"],
 	"version" : "0.0.1",
 	"author" : "Richard Assar <richardassar@googlemail.com>",
