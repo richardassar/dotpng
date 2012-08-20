@@ -4,7 +4,7 @@
 	"keywords" : ["PNG", "image", "generation"],
 	"version" : "0.0.1",
 	"author" : "Richard Assar <richardassar@googlemail.com>",
-	"main" : "./src/dotpng.js",
+	"main" : "./index.js",
 	"test" : "make test",
 	"repository" : {
 		"type" : "git",

@@ -1,21 +1,12 @@
-all: dist/dotpng.js dist/dotpng.min.js
-
-dist:
-	mkdir -p dist
-
-dist/bundle.js: dist
-	ender build --output dist/bundle.js
-
-dist/dotpng.js: dist dist/bundle.js src/dotpng.js
-	(cat dist/bundle.js; cat src/dotpng.js) > dist/dotpng.js
-
-dist/dotpng.min.js: dist dist/dotpng.js
-	cat dist/dotpng.js | java -jar ~/closure-compiler/compiler.jar > dist/dotpng.min.js
+all: test
 
 clean:
-	rm -r dist
+	rm -r test/bundle.js
+	rm -r test/bundle.min.js
 
-test:
+test: test/test_html.js
+	browserify test/test_html.js -o test/bundle.js
+	cat test/bundle.js | java -jar ~/closure-compiler/compiler.jar > test/bundle.min.js
 	node test/test.js
 
 .PHONY: test clean
