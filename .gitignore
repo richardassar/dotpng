@@ -1,4 +1,4 @@
-node_modules
+node_modules/
 test/bundle.js
 test/bundle.min.js
 
