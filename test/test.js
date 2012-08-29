@@ -38,5 +38,3 @@ png.setImageData(imageData);
 png.generate();
 
 fs.writeFileSync(__dirname + "/output.png", png.getData('raw'), 'binary');
-
-console.log(png.getData('raw').length);
