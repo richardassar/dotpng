@@ -10,9 +10,10 @@
 	},
 	"repository" : {
 		"type" : "git",
-		"url" : "https://github.com/richardassar/dotpng"
+		"url" : "git://github.com/richardassar/dotpng"
 	},
 	"dependencies" : {
-		"bitster" : "https://github.com/richardassar/bitster/tarball/master"
+		"bitster" : "git://github.com/richardassar/bitster",
+		"base64" : "git://github.com/richardassar/base64.git"
 	}
 }

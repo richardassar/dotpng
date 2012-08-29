@@ -1,4 +1,5 @@
 node_modules/
 test/bundle.js
 test/bundle.min.js
+test/output.png
 

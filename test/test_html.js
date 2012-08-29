@@ -15,7 +15,7 @@ for(var y = 0; y < height; ++y) {
 		var index = (y * width + x) * numChannels;
 
 		imageData[index] = Math.floor((x / width) * 255);
-		imageData[index + 1] = Math.floor((y / width) * 255);
+		imageData[index + 1] = Math.floor((y / height) * 255);
 		imageData[index + 2] = 255 - Math.floor((x / width) * 255);
 		imageData[index + 3] = 255;
 	}
@@ -27,6 +27,6 @@ png.generate();
 
 var imageElement = new Image();
 
-imageElement.src = "data:image/png;base64," + png.getData('base64');
+imageElement.src = png.getData('base64');
 
 document.body.appendChild(imageElement);

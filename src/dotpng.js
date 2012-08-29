@@ -1,6 +1,7 @@
-var bitster = require("bitster");
+var assert = require("assert"),
+	bitster = require("bitster"),
+	btoa = require("base64").btoa;
 
-// TODO: Move to proto
 function splitChunks(string, chunkSize) {
 	var len = Math.ceil(string.length / chunkSize);
 
@@ -38,9 +39,9 @@ function adler32(string) {
 
 		s2 += s1;
 
-		if ((n-= 1) == 0) {
-			s1%= BASE;
-			s2%= BASE;
+		if ((n -= 1) == 0) {
+			s1 %= BASE;
+			s2 %= BASE;
 			n = NMAX;
 		}
 	}
@@ -143,6 +144,14 @@ function getIEND() {
 
 //
 var DotPNG = function(options) {
+	assert.ok(options.width, "Width specified");
+	assert.ok(options.width > 0, "Width is positive and non-zero specified");
+
+	assert.ok(options.height, "Height specified");
+	assert.ok(options.height > 0, "Height is positive and non-zero specified");
+
+	assert.ok(options.numChannels == 3 || options.numChannels == 4, "numChannels is 3 or 4");
+
 	this.options = options;
 };
 
@@ -163,11 +172,9 @@ DotPNG.prototype = {
 		switch(format) {
 			case 'raw':
 				return this.pngBytes;
-				break;
 
 			case 'base64':
-				return btoa(this.pngBytes);
-				break;
+				return "data:image/png;base64," + btoa(this.pngBytes);
 
 			default:
 				throw new Error("You must specify a type (raw|base64)");
