@@ -1,7 +1,7 @@
 var DotPNG = require("../"),
 	fs = require("fs");
 
-var width = 512, height = 512, numChannels = 4;
+var width = 512, height = 512, numChannels = 3;
 
 var png = new DotPNG({
 	'width' : width,
@@ -29,7 +29,6 @@ for(var y = 0; y < height; ++y) {
 		imageData[index] = clampByte(r * 255);
 		imageData[index + 1] = clampByte(g * 255);
 		imageData[index + 2] = clampByte(b * 255);
-		imageData[index + 3] = 255;
 	}
 }
 
